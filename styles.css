@@ -1,4 +1,4 @@
-/* General setup */
+/* Общая настройка */
 
 
 * {
@@ -11,7 +11,7 @@ body {
   max-width: 1400px;
 }
 
-/* Layout */
+/* Макет */
 
 section {
   float: left;
@@ -36,16 +36,15 @@ header, section, aside, nav, footer {
   padding: 20px;
 }
 
-/* header and footer */
+/* Верхний и нижний колонтитулы */
 
 header, footer {
   border-top: 5px solid #a66;
   border-bottom: 5px solid #a66;
 }
 
-/* WRITE YOUR CODE BELOW HERE */
 
-/*Fonts*/
+/*Шрифты*/
 
 @font-face {
   font-family: 'source_sans_proregular';
@@ -63,22 +62,20 @@ header, footer {
   font-style: normal;
 }
 
-/*General text styling*/
+/*Общий стиль текста*/
 
-/*set base font size of 10px and set default fonts for document*/
 html {
   font-size: 10px;
   font-family: 'source_sans_proregular', sans-serif, Helvetica, Arial;
 }
 
-/*give appropriate line-height and space letters and words for better readability*/
 body {
   line-height: 1.6;
   letter-spacing: 0.1rem;
   word-spacing: 0.1rem;
 }
 
-/*header typography*/
+/*типография заголовка*/
 h1 {
   font-family: 'cinzelregular', serif, 'Times New Roman';
   font-size: 5rem;
@@ -86,28 +83,24 @@ h1 {
   letter-spacing: .2rem;
 }
 
-/*header typography*/
 h2 {
   font-family: 'cinzelregular', serif, 'Times New Roman';
   font-size: 3em;
   letter-spacing: .1rem;
 }
 
-/*typography*/
+/*типография*/
 p, li {
   font-size: 2rem;
 }
 
-/*indentation for first sibling of h2 
-that is descandant of section element, for better viewability*/
 section h2 + p {
   text-indent: 2rem;
 }
 
 
-/*Links*/
+/*Ссылки*/
 
-/*add padding to top, left and right sides*/
 a {  
   text-decoration: underline;
   padding: 0.2rem 0.1rem 0;
@@ -122,7 +115,6 @@ a:visited {
   color: purple;
 }
 
-/*remove underline on focus*/
 a:focus {
   text-decoration: none;
   background-color: rgba(170, 102, 102, 0.1);
@@ -138,27 +130,18 @@ a:active {
   text-shadow: 1px 1px 1px black;
 }
 
-/*selects every link that has http anywhere as the value
-and adds padding to right side of the icon*/
 a[href*="http"] {
   background: url(icon.png) no-repeat 100% 0;
   background-size: 1.5rem 1.5rem;
   padding-right: 1.8rem;
 }
 
-/*Lists*/
-
-/*padding to top and bottom for better readability of the nav*/
 li {
   line-height: 1.6;
   padding: 0.2rem 0;
   list-style-type: circle;
 }
 
-/*applies outline to every list element, aligns them
-and adds a bottom margin, removes padding so background
-color is applied to entire box and adds appropriate line
-height*/
 
 nav li {
   list-style-type: none;
@@ -169,9 +152,6 @@ nav li {
   padding: 0;
 }
 
-/*removes outline from links, removes underline and displays
-them in inline-block so vertical padding, width and height
-applies so there is no clipping*/
 nav li a {
   outline:none;
   text-decoration: none;
@@ -181,7 +161,6 @@ nav li a {
   padding: 0;
 }
 
-/*adds effects for hover and focus*/
 nav li a:hover, nav li a:focus {
   background-color: #a66;
   color:white;
