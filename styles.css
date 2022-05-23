@@ -1,5 +1,6 @@
 /* General setup */
 
+
 * {
   box-sizing: border-box;
 }
@@ -31,106 +32,157 @@ footer {
   clear: both;
 }
 
-header,
-section,
-aside,
-nav,
-footer {
+header, section, aside, nav, footer {
   padding: 20px;
 }
 
 /* header and footer */
 
-header,
-footer {
+header, footer {
   border-top: 5px solid #a66;
   border-bottom: 5px solid #a66;
 }
 
 /* WRITE YOUR CODE BELOW HERE */
 
+/*Fonts*/
+
+@font-face {
+  font-family: 'source_sans_proregular';
+  src: url('fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
+       url('fonts/sourcesanspro-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cinzelregular';
+  src: url('fonts/cinzel-regular-webfont.woff2') format('woff2'),
+       url('fonts/cinzel-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*General text styling*/
+
+/*set base font size of 10px and set default fonts for document*/
 html {
   font-size: 10px;
-  margin: 0;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'source_sans_proregular', sans-serif, Helvetica, Arial;
 }
 
-h1,
-h2 {
-  font-family: "Lora", sans-serif;
-  letter-spacing: 0.2rem;
-}
-
+/*give appropriate line-height and space letters and words for better readability*/
 body {
-  line-height: 2em;
+  line-height: 1.6;
   letter-spacing: 0.1rem;
-  word-spacing: 0.2rem;
+  word-spacing: 0.1rem;
 }
 
+/*header typography*/
 h1 {
+  font-family: 'cinzelregular', serif, 'Times New Roman';
+  font-size: 5rem;
   text-align: center;
+  letter-spacing: .2rem;
 }
 
-h2 + p {
-  text-indent: 30px;
+/*header typography*/
+h2 {
+  font-family: 'cinzelregular', serif, 'Times New Roman';
+  font-size: 3em;
+  letter-spacing: .1rem;
 }
 
-a {
+/*typography*/
+p, li {
+  font-size: 2rem;
+}
+
+/*indentation for first sibling of h2 
+that is descandant of section element, for better viewability*/
+section h2 + p {
+  text-indent: 2rem;
+}
+
+
+/*Links*/
+
+/*add padding to top, left and right sides*/
+a {  
+  text-decoration: underline;
+  padding: 0.2rem 0.1rem 0;
   outline: none;
+}
+
+a:link {
+  color:#a66;
+}
+
+a:visited {
+  color: purple;
+}
+
+/*remove underline on focus*/
+a:focus {
   text-decoration: none;
-  border-bottom: 1px solid;
+  background-color: rgba(170, 102, 102, 0.1);
+  border-radius: .5rem .5rem .5rem;
 }
 
-a[href^="https"]:link {
-  color: #a66;
-  background: url("extlink.png") no-repeat 100% 0;
-  background-size: 12px 12px;
-  padding-right: 15px;
+a:hover {
+  text-decoration: none;
+  color:#a69;
 }
 
-a[href^="https"]:visited {
-  color: #d788df;
+a:active {
+  text-shadow: 1px 1px 1px black;
 }
 
-a[href^="https"]:focus {
-  border-bottom: none;
-  background: #d688df65;
+/*selects every link that has http anywhere as the value
+and adds padding to right side of the icon*/
+a[href*="http"] {
+  background: url(icon.png) no-repeat 100% 0;
+  background-size: 1.5rem 1.5rem;
+  padding-right: 1.8rem;
 }
 
-a[href^="https"]:hover {
-  color: white;
-  background-color: #a66;
-  border-bottom: none;
+/*Lists*/
+
+/*padding to top and bottom for better readability of the nav*/
+li {
+  line-height: 1.6;
+  padding: 0.2rem 0;
+  list-style-type: circle;
 }
 
-a[href^="#"]:link {
-  color: #a66;
-}
+/*applies outline to every list element, aligns them
+and adds a bottom margin, removes padding so background
+color is applied to entire box and adds appropriate line
+height*/
 
-li,
-p {
-  line-height: 2em;
-}
-
-ul {
-  list-style-type: square;
-}
-
-ol {
-  list-style-type: lower-alpha;
-}
-
-nav ul li {
-  padding: 5%;
-  width: 100%;
+nav li {
   list-style-type: none;
-  color: #a66;
-  border: 1px solid;
+  outline: 1px solid #a66;
   text-align: center;
-  font-size: 1.5em;
-  margin-top: 10px;
+  margin-bottom: 2rem;
+  line-height: 3;
+  padding: 0;
 }
 
-nav ul li a[href^="#"]:link {
-  border-bottom: none;
+/*removes outline from links, removes underline and displays
+them in inline-block so vertical padding, width and height
+applies so there is no clipping*/
+nav li a {
+  outline:none;
+  text-decoration: none;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+/*adds effects for hover and focus*/
+nav li a:hover, nav li a:focus {
+  background-color: #a66;
+  color:white;
 }
